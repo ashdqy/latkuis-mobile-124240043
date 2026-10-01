@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<String> _categories = ["Semua", "Makanan", "Minuman"];
+  final List<String> _categories = ["Semua", "Mie", "Dimsum" , "Minuman"];
   String _keyword = "";
   String _selectedCategory = "Semua";
 
