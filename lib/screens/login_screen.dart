@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lat_kuis/models/data.dart';
+import 'package:lat_kuis/root.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -22,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void _login({required String username, required String password}) {
     if (username.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-         SnackBar(
+        SnackBar(
           backgroundColor: Colors.orange,
           content: Text("Username dan password tidak boleh kosong"),
         ),
@@ -37,12 +38,14 @@ class _LoginScreenState extends State<LoginScreen> {
           content: Text("Login Berhasil!"),
         ),
       );
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Root(username: username)),
+      );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          backgroundColor: Colors.red,
-          content: Text("Login Gagal!"),
-        ),
+        SnackBar(backgroundColor: Colors.red, content: Text("Login Gagal!")),
       );
     }
   }
