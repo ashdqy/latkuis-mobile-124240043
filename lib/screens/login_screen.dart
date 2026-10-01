@@ -22,7 +22,8 @@ class _LoginScreenState extends State<LoginScreen> {
   void _login({required String username, required String password}) {
     if (username.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
+         SnackBar(
+          backgroundColor: Colors.orange,
           content: Text("Username dan password tidak boleh kosong"),
         ),
       );
@@ -38,7 +39,10 @@ class _LoginScreenState extends State<LoginScreen> {
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(backgroundColor: Colors.red, content: Text("Login Gagal!")),
+        SnackBar(
+          backgroundColor: Colors.red,
+          content: Text("Login Gagal!"),
+        ),
       );
     }
   }
@@ -55,12 +59,14 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Text("Selamat Datang di Gacoan"),
                 TextField(
+                  controller: _usernameController,
                   decoration: InputDecoration(
                     hintText: "username",
                     border: OutlineInputBorder(),
                   ),
                 ),
                 TextField(
+                  controller: _passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
                     hintText: "password",
