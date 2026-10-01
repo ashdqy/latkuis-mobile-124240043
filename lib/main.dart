@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lat_kuis/screens/home.dart';
 import 'screens/login_screen.dart';
+import 'package:lat_kuis/models/data.dart';
+import 'package:lat_kuis/screens/detail.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,7 +15,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(appBar: AppBar(title: const Text("Home")), body: const HomeScreen()),
+      home: DetailScreen(menu: menus[0]),
     );
   }
 }
