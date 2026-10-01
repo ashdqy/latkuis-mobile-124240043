@@ -13,7 +13,33 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Login Screen"),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              spacing: 10,
+              children: [
+                Text("Selamat Datang di Gacoan"),
+                TextField(
+                  decoration: InputDecoration(
+                      hintText: "username", border: OutlineInputBorder()),
+                ),
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      hintText: "password", border: OutlineInputBorder()),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.75,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text("Login"),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
