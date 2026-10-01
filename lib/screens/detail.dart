@@ -45,7 +45,9 @@ class DetailScreen extends StatelessWidget {
               Text("Deskripsi", style: TextStyle(fontWeight: FontWeight.bold)),
               Text(menu.description),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 child: Text("Kembali ke Home"),
               ),
             ],

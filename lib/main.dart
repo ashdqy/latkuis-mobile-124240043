@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DetailScreen(menu: menus[0]),
+      home: Scaffold(appBar: AppBar(title: Text("Home")), body: HomeScreen()),
     );
   }
 }

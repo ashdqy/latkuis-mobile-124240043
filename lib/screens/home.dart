@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lat_kuis/models/data.dart';
+import 'package:lat_kuis/screens/detail.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,11 +8,16 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-       itemCount: menus.length,
+      itemCount: menus.length,
       itemBuilder: (context, index) {
         return ListTile(
           onTap: () {
-            
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(menu: menus[index]),
+              ),
+            );
           },
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(8),
@@ -36,4 +42,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-          
