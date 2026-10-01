@@ -60,6 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               spacing: 10,
               children: [
+                Image.asset("assets/images/logo.png", width: 200),
                 Text("Selamat Datang di Gacoan"),
                 TextField(
                   controller: _usernameController,
